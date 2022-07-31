@@ -4,6 +4,10 @@ import CartContext from "../../store/cart-context";
 import CartItem from "./CartItem";
 import { useContext } from "react";
 
+const clickHandler = (event) => {
+	alert("Oredering Food!");
+};
+
 const Cart = (props) => {
 	const cartCtx = useContext(CartContext);
 
@@ -46,7 +50,11 @@ const Cart = (props) => {
 				<button className={classes["button--alt"]} onClick={props.onClose}>
 					Close
 				</button>
-				{hasItems && <button className={classes.button}>Order</button>}
+				{hasItems && (
+					<button className={classes.button} onClick={clickHandler}>
+						Order
+					</button>
+				)}
 			</div>
 		</Modal>
 	);
